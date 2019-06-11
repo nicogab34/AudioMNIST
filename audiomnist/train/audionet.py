@@ -71,7 +71,7 @@ def train(dataset_path, checkpoint_path, logdir, batch_size, epochs):
 
     model.load_weights(best_epoch_checkpoint)
 
-    scores = model.evaluate(test_dataset, steps=test_nb_samples)
+    scores = model.evaluate(test_dataset, steps=int(math.ceil(test_nb_samples/batch_size)))
 
     with open(os.path.join(checkpoint_path,f"evalution_epoch{best_epoch}.txt"), "w") as fh:
         for i, name in enumerate(model.metrics_names):
