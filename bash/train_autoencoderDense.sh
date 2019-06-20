@@ -7,8 +7,8 @@
 #PBS -q gpuq
 #PBS -P randstad
 #PBS -M badryoubiidrissi@gmail.com
-#PBS -o logs/output_autoenc3.txt
-#PBS -e logs/error_autoenc3.txt
+#PBS -o logs/output_autoencDense.txt
+#PBS -e logs/error_autoencDense.txt
 
 # Module load
 
@@ -19,4 +19,4 @@ cd /workdir/idrissib/AudioMNIST
 
 source activate aud_interp_gpu
 
-mprof run -o "logs/mprofile_<clement>.dat" train_autoencoder.py -i tf_data/audionet.tfrecords -o models/autoencoder3 -l tensorboard/autoencoder3_lr_0.0005 -b 100 -e 100
+mprof run -o "logs/mprofile_<clement>.dat" train_autoencDense.py -i tf_data/audionet.tfrecords -o models/autoencDense -l tensorboard/autoencDense_lr_0.0005 -b 100 -e 100

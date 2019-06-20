@@ -36,7 +36,6 @@ def train(dataset_path,checkpoint_path, logdir, batch_size, epochs):
     for e in dataset :
         l = e['data'].numpy().flatten()
         maxi = max(max(max(l),abs(min(l))),maxi)
-
     '''
     Split the dataset
     '''
