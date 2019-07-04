@@ -19,4 +19,4 @@ cd /workdir/idrissib/AudioMNIST
 
 source activate aud_interp_gpu
 
-mprof run -o "logs/mprofile_<YYYYMMDDhhmmss>.dat" train_audionet.py -i tf_data/audionet.tfrecords -o models/audionet2 -l tensorboard/audionet2_lr_0.0005 -b 100 -e 50
+python train_classification.py audionet_big -i tf_data/raw.tfrecords -o models/audionet_big_1 -l tensorboard/audionet_big_1 -b 100 -e 50 -lr 0.0005
