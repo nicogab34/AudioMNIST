@@ -2,8 +2,6 @@ import tensorflow as tf
 from tensorflow.keras import layers, initializers, optimizers
 from tensorflow.python.keras.layers.advanced_activations import LeakyReLU
 
-#gaussian0_1 = initializers.RandomNormal(mean=0.0, stddev=0.1, seed=None)
-
 def build_model():
     model = tf.keras.Sequential()
     model.add(layers.Conv2D(96, kernel_size = (11,11), input_shape=(227,227,1), strides=(4,4), activation='linear', padding='valid', name='conv1'))
