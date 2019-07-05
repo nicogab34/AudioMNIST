@@ -16,9 +16,7 @@ def make_tuple(record):
     return (record['data'],record['data'])
 
 def get_epoch_checkpoint(checkpoint_path, epoch):
-    print(os.path.join(checkpoint_path, f"model.{epoch:02d}-*.data*"))
     epoch_checkpoint = glob.glob(os.path.join(checkpoint_path, f"model.{epoch:02d}-*.data*"))
-    print(epoch_checkpoint)
     assert len(epoch_checkpoint) == 1
     epoch_checkpoint = epoch_checkpoint[0].split(".data")[0]
     return epoch_checkpoint
