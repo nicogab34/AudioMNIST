@@ -17,9 +17,11 @@ def build_model():
     model.add(layers.Conv2D(384, kernel_size = (3,3), padding='valid', name='conv3'))
     model.add(LeakyReLU(alpha=0.01,name='leaky_relu3'))
 
-    model.add(layers.Conv2D(384, kernel_size = (3,3), activation='relu', padding='valid', name='conv4'))
+    model.add(layers.Conv2D(384, kernel_size = (3,3), padding='valid', name='conv4'))
+    model.add(LeakyReLU(alpha=0.01,name='leaky_relu4'))
 
-    model.add(layers.Conv2D(256, kernel_size = (3,3), activation='relu', padding='valid', name='conv5'))
+    model.add(layers.Conv2D(256, kernel_size = (3,3), padding='valid', name='conv5'))
+    model.add(LeakyReLU(alpha=0.01,name='leaky_relu5'))
     model.add(layers.MaxPooling2D(pool_size=2,strides=2, name='pool3'))
     
     model.add(layers.Flatten())

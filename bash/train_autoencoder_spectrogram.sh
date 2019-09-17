@@ -19,4 +19,4 @@ cd /workdir/2017duquesnej/AudioMNIST
 
 source activate aud_interp_gpu
 
-mprof run -o 'logs/mprofile_<YYYYMMDDhhmmss>.dat' train_autoencoder_spectrogram.py -i tf_data/spectrogram.tfrecords -o models/autoencoder_spectrogram -l tensorboard/autoencoder_spectrogram_lr_0.0005 -b 100 -e 50
+mprof run -o 'logs/mprofile_<YYYYMMDDhhmmss>.dat' train_autoencoder_spectrogram.py -i tf_data/spectrogram.tfrecords -o models/autoencoder_spectrogram2 -l tensorboard/autoencoder_spectrogram_lr_0.0005 -b 100 -e 50
