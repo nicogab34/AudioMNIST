@@ -1,14 +1,14 @@
  #!/bin/bash
 
 #PBS -S /bin/bash
-#PBS -N ELMo-test
+#PBS -N vae-test-dty
 #PBS -l walltime=2:00:00
 #PBS -l select=1:ncpus=2:gputype=k40m
 #PBS -q gpuq
 #PBS -P randstad
 #PBS -M badryoubiidrissi@gmail.com
-#PBS -o logs/output.txt
-#PBS -e logs/error.txt
+#PBS -o logs/output_vae.txt
+#PBS -e logs/error_vae.txt
 
 # Module load
 
@@ -19,4 +19,4 @@ cd /workdir/idrissib/AudioMNIST
 
 source activate aud_interp_gpu
 
-mprof run -o "logs/mprofile_<YYYYMMDDhhmmss>.dat" train_alexnet.py -i tf_data/alexnet.tfrecords -o models/alexnet -l tensorboard/alexnet_lr_0.0005 -b 100 -e 50
+mprof run -o "logs/mprofile_<vae>.dat" train_vae.py -i tf_data/audionet.tfrecords -o models/vae -l tensorboard/vae -b 100 -e 20
